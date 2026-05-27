@@ -195,7 +195,125 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+ 
+/* =========================
+   SMALL PHONES (≤ 360px)
+========================= */
+@media (max-width: 360px) {
 
+  .title {
+    font-size: 20px;
+  }
+
+  .letters {
+    margin-top: 160px;
+  }
+
+  .letter {
+    font-size: 60px;
+  }
+
+  .invite h2 {
+    font-size: 22px;
+  }
+
+  .invite p {
+    font-size: 15px;
+  }
+} 
+ 
+/* =========================
+   MOBILE (≤ 480px)
+========================= */
+@media (max-width: 480px) {
+
+  .hero {
+    height: 100vh;
+  }
+
+  .title {
+    font-size: 22px;
+    margin-top: 30px;
+    letter-spacing: 1px;
+  }
+
+  .letters {
+    width: 130px;
+    height: 90px;
+    margin-top: 200px;
+  }
+
+  .letter {
+    font-size: 70px;
+    letter-spacing: 2px;
+    transform: scaleY(0.82) scaleX(0.94);
+  }
+
+  .invite {
+    padding: 25px 10px 0px;
+  }
+
+  .invite h2 {
+    font-size: 20px;
+  }
+
+  .invite p {
+    font-size: 14px;
+    margin-top: 30px;
+  }
+
+  .invite h3 {
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+} 
+
+ 
+/* =========================
+   TABLET (≤ 768px)
+========================= */
+@media (max-width: 768px) {
+  
+   .hero {
+    height: 140vh;
+  }
+
+
+  .title {
+    font-size: 28px;
+    margin-top: 40px;
+    letter-spacing: 2px;
+  }
+
+  .letters {
+    width: 160px;
+    height: 100px;
+    margin-top: 200px;
+  }
+
+  .letter {
+    font-size: 90px;
+    letter-spacing: 3px;
+    transform: scaleY(0.8) scaleX(0.92);
+  }
+
+  .invite {
+    padding: 30px 15px 0px;
+    margin-top: 20px;
+  }
+
+  .invite h2 {
+    font-size: 28px;
+  }
+
+  .invite p {
+    font-size: 18px;
+  }
+
+  .invite h3 {
+    font-size: 16px;
+  }
+}
 /* ===== CALENDAR ===== */
 .calendar {
   text-align: center;
