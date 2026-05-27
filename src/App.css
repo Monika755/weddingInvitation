@@ -8,12 +8,24 @@ html, body, #root {
   width: 100%;
 }
 
-/* HERO SECTION WITH BACKGROUND */
-/* HERO SECTION WITH BACKGROUND */
+/* 🔥 GLOBAL BACKGROUND (BACK.PNG AFTER HERO) */
+body { 
+  overflow-x: hidden;
+  margin: 0;
+
+  background-image: url("./back.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  background-attachment: fixed;
+}
+
+/* ===== HERO ===== */
 .hero {
   position: relative;
   width: 100%;
-  height: 210vh;
+  height: 200vh;
 
   background-image: url("./image.png");
   background-size: cover;
@@ -21,154 +33,332 @@ html, body, #root {
   background-repeat: no-repeat;
 
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 /* TITLE */
 .title {
   margin-top: 60px;
+
   color: white;
   font-size: 34px;
   font-weight: 100;
   letter-spacing: 3px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto;
 
-  text-shadow: 0 4px 10px rgba(0,0,0,0.6);
-  animation: slideDown 3s ease forwards;
+  font-family: system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto;
+
+  text-shadow: 0 6px 20px rgba(0, 0, 0, 0.9);
+
   opacity: 0;
-}
+  transform: translateY(-80px);
 
-/* TABLET */
-@media (max-width: 900px) {
-  .hero {
-    height: 160vh;
-    background-position: center top;
-  }
-
-  .title {
-    font-size: 30px;
-    margin-top: 50px;
-    letter-spacing: 2px;
-  }
-}
-
-/* MOBILE */
-@media (max-width: 600px) {
-  .hero {
-    height: 140vh;
-
-    /* կարևոր մասը՝ որ նկարը չմոտիկանա */
-    background-size: contain;
-    background-position: top center;
-    background-repeat: no-repeat;
-  }
-
-  .title {
-    font-size: 24px;
-    margin-top: 40px;
-    letter-spacing: 2px;
-  }
-}
-
-/* SMALL PHONES */
-@media (max-width: 400px) {
-  .hero {
-    height: 150vh;
-    background-size: contain;
-    background-position: top center;
-    background-repeat: no-repeat;
-  }
-
-  .title {
-    font-size: 22px;
-    margin-top: 40px;
-    letter-spacing: 1px;
-  }
-}
+  animation: slideDown 3s ease forwards;
+} 
 
 @keyframes slideDown {
   0% {
-    transform: translateY(-120px);
+    transform: translateY(-80px);
     opacity: 0;
   }
+
   100% {
     transform: translateY(0);
     opacity: 1;
   }
 }
 
-.content {
-  min-height: 100vh;
-  padding: 40px;
-  background: white;
-  color: black;
+/* LETTERS */
+.letters {
+  position: relative;
+  width: 200px;
+  height: 120px;
+
+  margin-top: 600px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* MOBILE */
-@media (max-width: 600px) {
-  .title {
-    font-size: 26px;
-    margin-top: 40px;
-    padding: 0 10px;
-  }
+.letter {
+  position: absolute;
 
-  .content {
-    padding: 20px;
-  }
-} 
+  font-family: "Playfair Display", serif;
+  font-weight: 200;
 
-/* INVITE SECTION (NEW BACKGROUND) */
+  font-size: 120px;
+
+  color: rgba(241, 236, 236, 0.85);
+
+  opacity: 0;
+  line-height: 1;
+
+  letter-spacing: 6px;
+
+  transform: scaleY(0.75) scaleX(0.9);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  filter: brightness(1.2) contrast(0.85);
+
+  text-shadow: 0 0 0.15px rgba(255,255,255,0.05);
+}
+
+/* LETTER ANIMATION */
+.left {
+  animation: moveA 3.5s ease forwards;
+}
+
+.right {
+  animation: moveS 3.5s ease forwards;
+}
+
+@keyframes moveA {
+  0% {
+    transform: translateX(-160px) translateY(-25px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-14px) translateY(-4px);
+    opacity: 1;
+  }
+}
+
+@keyframes moveS {
+  0% {
+    transform: translateX(160px) translateY(25px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(14px) translateY(4px);
+    opacity: 1;
+  }
+}
+
+/* ===== INVITE ===== */
 .invite {
   width: 100%;
-  min-height: 100vh;
+  min-height: 100vh;  
+  margin-top: 40px;
 
-  background-image: url("./back.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: transparent;
 
   color: black;
   text-align: center;
 
-  padding: 80px 20px;
+   padding: 40px 20px 0px;
 }
 
+/* INVITE TEXT */
 .invite h2 {
-  font-size: 28px;
+  font-size: 34px;
   margin-bottom: 20px;
   font-weight: 400;
 
-  color: #b99763; /* մի քիչ բաց + soft gold */
+  color: #b99763;
   font-style: italic;
 
   text-shadow: 0 1px 2px rgba(255, 215, 120, 0.25);
 }
-.invite p {
-  font-size: 18px;
-  margin-bottom: 15px;
-  line-height: 1.6;
-  font-weight: 300;
-}
 
-.invite h3 {
-  font-size: 30px;
-  margin-top: 20px;
-  letter-spacing: 2px;
+.invite p {
+  font-size: 20px;
+  margin-bottom: 15px;
+  margin-top: 50px;
+  line-height: 1.6;
   font-weight: 400;
 }
 
-/* MOBILE FIX FOR NEW SECTION */
-@media (max-width: 600px) {
-  .invite h2 {
-    font-size: 22px;
+.invite h3 {
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: 100;
+  margin: 5px 0;
+}
+
+/* SCROLL ANIMATION */
+.invite h2,
+.invite p,
+.invite h3 {
+  opacity: 0;
+  transform: translateY(-25px);
+  transition: all 0.9s ease;
+}
+
+.invite.show h2,
+.invite.show p,
+.invite.show h3 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== CALENDAR ===== */
+.calendar {
+  text-align: center;
+  color: black;
+
+    margin-top: -60px !important;  /* 🔥 ոչ մի արտաքին space */
+
+  font-family: system-ui, -apple-system, sans-serif;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px; /* 🔥 սա է տողերի միջև հեռավորությունը */
+} 
+.invite,
+.calendar {
+  position: relative;
+  z-index: 2;
+}
+.month {
+  font-size: 38px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  margin-bottom: 14px;
+
+  color: #b99763;
+
+  font-style: italic;
+
+  /* 🔥 ավելի “ձևավոր” տեսք */
+  font-family: "Playfair Display", "Cormorant Garamond", serif;
+
+  /* շքեղ feel */
+  transform: skew(-6deg, 0deg);
+
+  text-shadow: 0 1px 2px rgba(185, 151, 99, 0.25);
+}
+
+.weekdays,
+.dates {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 8px; 
+  gap: 20px;
+}
+
+.weekdays span { 
+  width: 40px;
+  height: 40px;
+  font-size: 22px;  
+  font-style: italic;
+  opacity: 0.8;
+}
+
+.dates span {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  font-size: 22px;
+} 
+.dates .active {
+  position: relative;
+
+  border: 2px solid #b99763; /* 💍 ring color */
+  background: transparent;
+
+  color: rgba(185, 151, 99, 0.6);
+  font-weight: 500;
+}
+
+/* glow ring effect */
+.dates .active {
+  position: relative;
+
+  border: 2px solid #b99763;
+  background: transparent;
+
+  color: #000;
+  font-weight: 500;
+
+  animation: ringFloat 4s ease-in-out infinite;
+}
+
+/* ring */
+.dates .active::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+
+  border: 1px solid rgba(185, 151, 99, 0.6);
+  border-radius: 50%;
+}
+
+/* 🔥 full element movement */
+@keyframes ringFloat {
+  0% {
+    transform: translateY(0);
   }
 
-  .invite p {
+  50% {
+    transform: translateY(-6px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+} 
+
+@media (max-width: 768px) {
+
+  .calendar {
+    gap: 10px;
+  }
+
+  .month {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+
+  .weekdays,
+  .dates {
+    gap: 10px;
+  }
+
+  .weekdays span,
+  .dates span {
+    width: 34px;
+    height: 34px;
     font-size: 16px;
   }
+}
 
-  .invite h3 {
+@media (max-width: 480px) {
+
+  .calendar {
+    gap: 8px;
+  }
+
+  .month {
     font-size: 24px;
+    letter-spacing: 1px;
+  }
+
+  .weekdays,
+  .dates {
+    gap: 6px;
+  }
+
+  .weekdays span,
+  .dates span {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  /* 💍 ring adjust for small screens */
+  .dates .active::before {
+    inset: -4px;
   }
 }
