@@ -8,7 +8,11 @@ import shampajn from "./assets/shampayn.png";
 import paradis from "./assets/paradis.png"; 
 import image1 from "./assets/image1.png";
 
-export default function App() {
+export default function App() {   
+  const [side, setSide] = useState("հարսի կողմ");
+const [name, setName] = useState("");
+const [attendance, setAttendance] = useState("կգանք");
+const [guests, setGuests] = useState(1);
   const inviteRef = useRef(null);
   const [show, setShow] = useState(false); 
 
@@ -16,7 +20,7 @@ export default function App() {
 
 const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
-useEffect(() => {
+useEffect(() => { 
   const timer = setInterval(() => {
     const now = new Date();
     const diff = weddingDate - now;
@@ -189,7 +193,7 @@ useEffect(() => {
   </div>
 </div> 
 <div className="rsvp">
-  <h2>Սվետլանա և Հայկ</h2>
+  <h2>Հայկ և Սվետլանա</h2>
 
   <p className="rsvp-text">
     Սիրով հրավիրում ենք Ձեզ կիսելու մեր կյանքի ամենակարևոր օրը։
@@ -198,6 +202,71 @@ useEffect(() => {
   <p className="rsvp-note">
     Խնդրում ենք հաստատել Ձեր ներկայությունը և նշել անձերի քանակը։
   </p>
+</div> 
+<div className="form-wrapper">
+  <div className="form-section">
+    <h2>Հաստատել մասնակցությունը</h2>
+
+    {/* Կողմ */}
+    <label>Կողմ</label>
+    <select value={side} onChange={(e) => setSide(e.target.value)}>
+      <option value="հարսի կողմ">Հարսի կողմ</option>
+      <option value="փեսայի կողմ">Փեսայի կողմ</option>
+    </select>
+
+    {/* Անուն */}
+    <label>Անուն Ազգանուն</label>
+    <input
+      type="text"
+      value={name}
+      onChange={(e) => setName(e.target.value)}
+      placeholder="Գրեք ձեր անունը"
+    />
+
+    {/* Գալու է */}
+    <label>Ներկա լինելու եք՞</label>
+    <select value={attendance} onChange={(e) => setAttendance(e.target.value)}>
+      <option value="կգանք">Կգանք</option>
+      <option value="չենք գա">Չենք գա</option>
+    </select>
+
+    {/* Հյուրերի քանակ */}
+    <label>Հյուրերի քանակ</label>
+    <input
+      type="number"
+      min="1"
+      value={guests}
+      onChange={(e) => setGuests(e.target.value)}
+    />
+
+    {/* BUTTON */}
+    <button
+      className="send-btn"
+      onClick={() => {
+        const message = `
+💌 Հարսանյաց RSVP
+
+👤 Անուն: ${name}
+👥 Կողմ: ${side}
+📌 Ներկա: ${attendance}
+🎟 Հյուրերի քանակ: ${guests}
+        `;
+
+        const myNumber = "37433030716"; // 🔥 քո Viber number (առանց +)
+
+        const url = `viber://chat?number=${myNumber}`;
+
+        // message-ը copy ենք անում
+        navigator.clipboard.writeText(message);
+
+        alert("Տվյալները copy եղան, բացվում է Viber");
+
+        window.location.href = url;
+      }}
+    >
+      Ուղարկել Viber
+    </button>
+  </div>
 </div>
     </>
   );
