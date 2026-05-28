@@ -2,23 +2,23 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}  
+@font-face {
+  font-family: "Nasa";
+  src: url("./fonts/NasaFont.woff2") format("woff2");
+  font-display: swap;
 }
+
 
 html, body, #root {
   width: 100%;
 }
 
 /* 🔥 GLOBAL BACKGROUND (BACK.PNG AFTER HERO) */
-body { 
+body {   
   overflow-x: hidden;
   margin: 0;
-
-  background-image: url("./back.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  background-attachment: fixed;
+  background: white;  
 }
 
 /* ===== HERO ===== */
@@ -70,75 +70,6 @@ body {
   }
 }
 
-/* LETTERS */
-.letters {
-  position: relative;
-  width: 200px;
-  height: 120px;
-
-  margin-top: 600px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.letter {
-  position: absolute;
-
-  font-family: "Playfair Display", serif;
-  font-weight: 200;
-
-  font-size: 120px;
-
-  color: rgba(241, 236, 236, 0.85);
-
-  opacity: 0;
-  line-height: 1;
-
-  letter-spacing: 6px;
-
-  transform: scaleY(0.75) scaleX(0.9);
-
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  filter: brightness(1.2) contrast(0.85);
-
-  text-shadow: 0 0 0.15px rgba(255,255,255,0.05);
-}
-
-/* LETTER ANIMATION */
-.left {
-  animation: moveA 3.5s ease forwards;
-}
-
-.right {
-  animation: moveS 3.5s ease forwards;
-}
-
-@keyframes moveA {
-  0% {
-    transform: translateX(-160px) translateY(-25px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(-14px) translateY(-4px);
-    opacity: 1;
-  }
-}
-
-@keyframes moveS {
-  0% {
-    transform: translateX(160px) translateY(25px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(14px) translateY(4px);
-    opacity: 1;
-  }
-}
-
 /* ===== INVITE ===== */
 .invite {
   width: 100%;
@@ -150,14 +81,16 @@ body {
   color: black;
   text-align: center;
 
-   padding: 40px 20px 0px;
+   padding: 40px 40px 20px;
 }
 
 /* INVITE TEXT */
 .invite h2 {
-  font-size: 34px;
+  font-size: 70px;
   margin-bottom: 20px;
-  font-weight: 400;
+  font-weight: 400;  
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+font-weight: 100;
 
   color: #b99763;
   font-style: italic;
@@ -165,19 +98,21 @@ body {
   text-shadow: 0 1px 2px rgba(255, 215, 120, 0.25);
 }
 
-.invite p {
+.invite p {  
   font-size: 20px;
   margin-bottom: 15px;
   margin-top: 50px;
   line-height: 1.6;
-  font-weight: 400;
+  font-weight: 400; 
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+font-weight: 100;
 }
 
 .invite h3 {
   font-size: 18px;
   letter-spacing: 2px;
   font-weight: 100;
-  margin: 5px 0;
+  margin: 5px 0; 
 }
 
 /* SCROLL ANIMATION */
@@ -196,141 +131,27 @@ body {
   transform: translateY(0);
 }
  
-/* =========================
-   SMALL PHONES (≤ 360px)
-========================= */
-@media (max-width: 360px) {
-
-  .title {
-    font-size: 20px;
-  }
-
-  .letters {
-    margin-top: 160px;
-  }
-
-  .letter {
-    font-size: 60px;
-  }
-
-  .invite h2 {
-    font-size: 22px;
-  }
-
-  .invite p {
-    font-size: 15px;
-  }
-} 
- 
-/* =========================
-   MOBILE (≤ 480px)
-========================= */
-@media (max-width: 480px) {
-
-  .hero {
-    height: 100vh;
-  }
-
-  .title {
-    font-size: 22px;
-    margin-top: 30px;
-    letter-spacing: 1px;
-  }
-
-  .letters {
-    width: 130px;
-    height: 90px;
-    margin-top: 200px;
-  }
-
-  .letter {
-    font-size: 70px;
-    letter-spacing: 2px;
-    transform: scaleY(0.82) scaleX(0.94);
-  }
-
-  .invite {
-    padding: 25px 10px 0px;
-  }
-
-  .invite h2 {
-    font-size: 20px;
-  }
-
-  .invite p {
-    font-size: 14px;
-    margin-top: 30px;
-  }
-
-  .invite h3 {
-    font-size: 16px;
-    letter-spacing: 1px;
-  }
-} 
-
- 
-/* =========================
-   TABLET (≤ 768px)
-========================= */
-@media (max-width: 768px) {
-  
-   .hero {
-    height: 140vh;
-  }
-
-
-  .title {
-    font-size: 28px;
-    margin-top: 40px;
-    letter-spacing: 2px;
-  }
-
-  .letters {
-    width: 160px;
-    height: 100px;
-    margin-top: 200px;
-  }
-
-  .letter {
-    font-size: 90px;
-    letter-spacing: 3px;
-    transform: scaleY(0.8) scaleX(0.92);
-  }
-
-  .invite {
-    padding: 30px 15px 0px;
-    margin-top: 20px;
-  }
-
-  .invite h2 {
-    font-size: 28px;
-  }
-
-  .invite p {
-    font-size: 18px;
-  }
-
-  .invite h3 {
-    font-size: 16px;
-  }
+.invite h3:last-of-type {
+  margin-bottom: 80px;
 }
 /* ===== CALENDAR ===== */
 .calendar {
   text-align: center;
   color: black;
 
-    margin-top: -60px !important;  /* 🔥 ոչ մի արտաքին space */
-
+margin-top: 40px;
   font-family: system-ui, -apple-system, sans-serif;
 
-  display: flex;
+  display: flex; 
+  justify-content: center;
   flex-direction: column;
 
   gap: 14px; /* 🔥 սա է տողերի միջև հեռավորությունը */
 } 
 .invite,
 .calendar {
-  position: relative;
+  position: relative; 
+  gap: 10px;
   z-index: 2;
 }
 .month {
@@ -356,23 +177,25 @@ body {
 .dates {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 15px;
   margin-bottom: 8px; 
   gap: 20px;
 }
 
-.weekdays span { 
+.weekdays span {   
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+font-weight: 100;
   width: 40px;
   height: 40px;
-  font-size: 22px;  
-  font-style: italic;
+  font-size: 28px;  
   opacity: 0.8;
 }
 
 .dates span {
   width: 40px;
-  height: 40px;
-
+  height: 50px;
+ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+font-weight: 100;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -427,56 +250,581 @@ body {
     transform: translateY(0);
   }
 } 
-
+/* =========================
+   TABLET (≤ 768px)
+========================= */
 @media (max-width: 768px) {
 
-  .calendar {
-    gap: 10px;
+  .hero {
+    height: 140vh;
   }
 
-  .month {
+  .title {
     font-size: 28px;
-    margin-bottom: 8px;
+    margin-top: 40px;
   }
 
-  .weekdays,
-  .dates {
-    gap: 10px;
+  .invite {
+    padding: 30px 15px 0;
   }
 
-  .weekdays span,
-  .dates span {
-    width: 34px;
-    height: 34px;
-    font-size: 16px;
+  .invite h2 {
+    font-size: 30px;
   }
+
+  .invite p {
+    font-size: 18px;
+  }
+
+
 }
 
+/* =========================
+   MOBILE (≤ 480px)
+========================= */
 @media (max-width: 480px) {
 
+  .hero {
+    height: 100vh;
+  }
+
+  .title {
+    font-size: 22px;
+    margin-top: 25px;
+  }
+
+  .invite {
+    padding: 25px 10px 0;
+  }
+
+  .invite h2 {
+    font-size: 25px;
+  }
+
+  .invite p {
+    font-size: 14px;
+    margin-top: 25px;
+  }
+
+  .invite h3 {
+    font-size: 15px;
+  }
+
   .calendar {
-    gap: 8px;
+    margin-top: -30px !important;
   }
 
   .month {
     font-size: 24px;
-    letter-spacing: 1px;
-  }
-
-  .weekdays,
-  .dates {
-    gap: 6px;
   }
 
   .weekdays span,
   .dates span {
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
+    font-size: 13px;
+  }
+}
+
+/* =========================
+   SMALL PHONES (≤ 360px)
+========================= */
+@media (max-width: 400px) {
+
+  .title {
+    font-size: 18px;
+  }
+  .invite h2 {
+    font-size: 20px;
+  }
+
+  .invite p {
     font-size: 14px;
   }
 
-  /* 💍 ring adjust for small screens */
-  .dates .active::before {
-    inset: -4px;
+
+  .month {
+    font-size: 18px;
+  } 
+   
+  .weekdays span { 
+    font-size: 20px;
+  }
+
+  
+  .dates span {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
   }
 }
+
+/* =========================
+   EXTRA SMALL (≤ 320px)
+========================= */
+@media (max-width: 320px) {
+
+  body {
+    background: #fff !important;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .invite h2 {
+    font-size: 18px;
+  }
+
+  .invite p {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .invite h3 {
+    font-size: 12px;
+  }
+
+  .month {
+    font-size: 18px;
+  }
+
+  .weekdays span,
+  .dates span {
+    width: 24px;
+    height: 24px;
+    font-size: 11px;
+  }
+} 
+.gallery {
+  display: flex;
+  justify-content: center;  /* 🔥 միշտ մեջտեղ */
+  align-items: center;
+
+  gap: 25px;
+
+  margin-top: 100px;
+  margin-bottom: 60px;
+
+  width: 100%;
+}
+
+.gallery img {
+  width: 260px;
+  height: auto;
+
+  border-radius: 16px;
+  object-fit: cover;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+/* 🔥 ավելի ուժեղ վերև/ներքև */
+.gallery img:nth-child(1) {
+  transform: translateY(-25px);
+}
+
+.gallery img:nth-child(2) {
+  transform: translateY(25px);
+}
+
+.gallery img:hover {
+  transform: scale(1.05) translateY(0);
+} 
+
+@media (max-width: 600px) {
+  .gallery {
+    flex-wrap: wrap;        /* 🔥 թող երկու նկարն էլ մնան կենտրոնում */
+    justify-content: center;
+    padding: 0 15px;
+  }
+
+  .gallery img {
+    width: 120px;           /* 🔥 փոքրանում են */
+  }
+} 
+.program {
+  text-align: center;
+  margin-top: 80px;
+  padding: 40px 20px;
+}
+
+/* TITLE */
+.program h2 {
+  font-size: 80px;
+  color: #b99763;
+  font-style: italic;
+  margin-bottom: 100px;
+  font-weight: 400;
+  font-family: "nasa";
+}
+
+/* BLOCK */
+.program-block {
+  margin-bottom: 100px;
+}
+
+/* vertical dots divider */
+.block::after {
+  content: "•\A•\A•\A•\A•\A•\A•";
+
+  display: block;
+  white-space: pre;
+
+  text-align: center;
+
+  color: #c8a96b;
+  font-size: 18px;
+  line-height: 18px;
+
+  margin: 50px 0;
+}
+
+/* IMAGES */
+.church-img {
+  width: 700px;
+  height: auto;
+
+  display: block;
+  margin: 25px auto;
+
+  object-fit: contain;
+  transition: 0.4s ease;
+}
+
+.church {
+  width: 140px;
+  height: auto;
+
+  display: block;
+  margin: 25px auto;
+
+  object-fit: contain;
+  transition: 0.4s ease;
+} 
+.church1 { 
+  width: 80px;
+  height: auto;
+
+  display: block;
+   margin: 60px auto 40px;
+
+  object-fit: contain;
+  transition: 0.4s ease;
+} 
+
+
+.church-img:hover {
+  transform: scale(1.04);
+}
+
+/* TEXT */
+.program h3 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto;
+
+  font-size: 22px;
+  font-weight: 200;
+
+  margin-top: 10px;
+  margin-bottom: 12px;
+
+  color: #1f1f1f;
+}
+
+.time {
+  font-family: "nasa";
+  font-size: 30px;
+  font-weight: 100;
+
+  margin: 10px 0;
+
+  color: black;
+}
+
+.place {
+  font-family: "nasa";
+  font-size: 40px;
+  line-height: 1.3;
+
+  margin: 5px 0 15px;
+
+  color: #000;
+}  
+
+.place1 { 
+   font-family: "nasa";
+  font-size: 40px;
+  line-height: 1.3;
+
+  margin: 5px 0 15px;
+
+  color: #000;
+} 
+
+
+
+/* BUTTON */
+.location-btn {
+  display: inline-block;
+
+  margin-top: 18px;
+  padding: 12px 30px;
+
+  border: none;
+  border-radius: 40px;
+
+  background: linear-gradient(135deg, #e5c48f, #c8a96b, #b58a4f);
+
+  color: white;
+  text-decoration: none;
+
+  font-size: 15px;
+  letter-spacing: 1px;
+
+  box-shadow: 0 6px 16px rgba(181, 138, 79, 0.28);
+
+  transition: 0.35s ease;
+}
+
+.location-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 10px 22px rgba(181, 138, 79, 0.35);
+}
+
+/* TABLET */
+@media (max-width: 768px) {
+  .program h2 {
+    font-size: 54px;
+    margin-bottom: 70px;
+  }
+
+  .church-img {
+    width: 300px;
+  }
+
+  .church {
+    width: 70px;
+  } 
+  .church1 { 
+    width: 70px;
+  }
+
+  .program h3 {
+    font-size: 18px;
+  }
+
+  .time {
+    font-size: 30px;
+  }
+
+  .place {
+    font-size: 45px;  
+    } 
+    .place1 {
+    font-size: 40px;  
+    }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .program {
+    margin-top: 35px;
+    padding: 25px 14px;
+  }
+ 
+
+
+  .place {
+    font-size: 40px;
+    line-height: 1.4;
+  } 
+  .place1 {
+font-size: 35px;
+    line-height: 1.4;    }
+  .program h2 {
+    font-size: 50px; 
+    
+    margin-bottom: 50px;
+  }
+
+  .church {
+    width: 75px;
+  }
+
+  .program h3 {
+    font-size: 16px;
+  }
+
+  .time {
+    font-size: 28px;
+  }
+
+  
+
+  .location-btn {
+    padding: 9px 20px;
+    font-size: 13px;
+  }
+} 
+
+.countdown-image {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 80px auto;
+}
+
+.countdown-image img {
+  width: 100%;
+  display: block;
+}
+
+/* BASE OVERLAY */
+.countdown-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: white;
+  text-align: center;
+
+  padding: 25px 15px;
+
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 0 0 20px 20px;
+}
+
+/* 👉 BOTTOM POSITION */
+.countdown-overlay.bottom {
+  bottom: 0;
+}
+
+.countdown-overlay h2 {
+  font-size: 34px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+font-weight: 100;
+  color: white;
+  margin-bottom: 12px;
+}
+
+.countdown {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.box {
+  font-size: 24px;
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+font-weight: 100;
+}
+
+.box span {
+  display: block;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.sep {
+  color: white;
+  font-size: 26px;
+} 
+
+@media (max-width: 768px) {
+  .countdown-overlay h2 {
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+ 
+ .countdown-image img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+  }
+
+  .box {
+    font-size: 20px;
+  }
+
+  .box span {
+    font-size: 11px;
+  }
+
+  .sep {
+    font-size: 22px;
+  }
+
+  .countdown {
+    gap: 8px;
+  }
+} 
+@media (max-width: 480px) {
+  .countdown-overlay {
+    padding: 15px 10px;
+  } 
+   
+  @media (max-width: 480px) {
+  .countdown-image img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+  }
+
+  .countdown-image {
+    margin: 50px auto;
+  }
+}
+
+  .countdown-overlay h2 {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .box {
+    font-size: 16px;
+  }
+
+  .box span {
+    font-size: 10px;
+  }
+
+  .sep {
+    font-size: 18px;
+  }
+
+  .countdown {
+    gap: 6px;
+  }
+} 
+
+.rsvp {
+  text-align: center;
+  margin-top: 100px;
+  padding: 40px 20px;
+}
+
+.rsvp h2 {
+  font-size: 50px;
+  font-family: "nasa";
+  color: #b99763;
+  margin-bottom: 20px;
+}
+
+.rsvp-text {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.rsvp-note {
+  font-size: 18px;
+  color: #777;
+} 
+
