@@ -3,9 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-
   "homepage": "https://monika755.github.io/weddingInvitation",
-
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -13,12 +11,11 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist --no-history"
   },
-
   "dependencies": {
     "react": "^19.2.6",
-    "react-dom": "^19.2.6"
+    "react-dom": "^19.2.6",
+    "vite-plugin-metadata": "^0.0.0-development"
   },
-
   "devDependencies": {
     "@vitejs/plugin-react": "^6.0.1",
     "gh-pages": "^6.3.0",
