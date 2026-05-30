@@ -6,9 +6,27 @@ import ekexeci from "./assets/ekexeci.png";
 import church from "./assets/church.png"; 
 import shampajn from "./assets/shampayn.png"; 
 import paradis from "./assets/paradis.png"; 
-import image1 from "./assets/image1.png";
+import image1 from "./assets/image1.png"; 
+import perfect from "./assets/perfect.mp3";
 
-export default function App() {   
+export default function App() {    
+  const audioRef = useRef(null);
+
+useEffect(() => {
+  const playAudio = () => {
+    audioRef.current?.play().catch(() => {});
+    document.removeEventListener("click", playAudio);
+    document.removeEventListener("touchstart", playAudio);
+  };
+
+  document.addEventListener("click", playAudio);
+  document.addEventListener("touchstart", playAudio);
+
+  return () => {
+    document.removeEventListener("click", playAudio);
+    document.removeEventListener("touchstart", playAudio);
+  };
+}, []);
   const [side, setSide] = useState("հարսի կողմ");
 const [name, setName] = useState("");
 const [attendance, setAttendance] = useState("կգանք");
@@ -54,7 +72,10 @@ useEffect(() => {
   }, []);
 
   return (
-    <>
+    <> 
+    <audio ref={audioRef} loop>
+  <source src={perfect} type="audio/mpeg" />
+</audio>
       {/* HERO */}
       <div className="hero">
         <h1 className="title">Հարսանյաց Հրավեր</h1>
@@ -242,27 +263,25 @@ useEffect(() => {
     {/* BUTTON */}
     <button
       className="send-btn"
-      onClick={() => {
-        const message = `
+   onClick={() => {
+  const message = `
 💌 Հարսանյաց RSVP
 
 👤 Անուն: ${name}
 👥 Կողմ: ${side}
 📌 Ներկա: ${attendance}
 🎟 Հյուրերի քանակ: ${guests}
-        `;
+  `;
 
-        const myNumber = "37433030716"; // 🔥 քո Viber number (առանց +)
+  // copy message
+  navigator.clipboard.writeText(message);
 
-        const url = `viber://chat?number=${myNumber}`;
+  // Viber number
+  const myNumber = "37433030716";
 
-        // message-ը copy ենք անում
-        navigator.clipboard.writeText(message);
-
-        alert("Տվյալները copy եղան, բացվում է Viber");
-
-        window.location.href = url;
-      }}
+  // direct open chat
+  window.open(`viber://chat?number=%2B${myNumber}`, "_blank");
+}}
     >
       Ուղարկել Viber
     </button>
