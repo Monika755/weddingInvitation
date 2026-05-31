@@ -7,7 +7,8 @@ import church from "./assets/church.png";
 import shampajn from "./assets/shampayn.png"; 
 import paradis from "./assets/paradis.png"; 
 import image1 from "./assets/image1.png"; 
-import perfect from "./assets/perfect.mp3";
+import perfect from "./assets/perfect.mp3"; 
+import add from "./assets/add.png";
 
 export default function App() {    
   const audioRef = useRef(null);
@@ -116,9 +117,10 @@ useEffect(() => {
           <span>27</span>
         </div> 
 
-       <div className="gallery">
+      <div className="gallery"> 
+        <img src={img1} alt="img2" />
   <img src={img} alt="img1" />
-  <img src={img1} alt="img2" />
+  <img src={add} alt="img3" />
 </div>
       </div>
       <div className="program">
@@ -214,7 +216,7 @@ useEffect(() => {
   </div>
 </div> 
 <div className="rsvp">
-  <h2>Հայկ և Սվետլանա</h2>
+  <h2>Հայկ և Սվետլաննա</h2>
 
   <p className="rsvp-text">
     Սիրով հրավիրում ենք Ձեզ կիսելու մեր կյանքի ամենակարևոր օրը։

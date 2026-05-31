@@ -335,27 +335,23 @@ font-weight: 100;
     font-size: 18px;
   }
   .invite h2 {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .invite p {
-    font-size: 14px;
+    font-size: 10px;
   }
 
 
   .month {
-    font-size: 18px;
+    font-size: 5px;
   } 
    
-  .weekdays span { 
-    font-size: 20px;
-  }
-
-  
+  .weekdays span,
   .dates span {
-    width: 24px;
-    height: 24px;
-    font-size: 12px;
+    width: 16px;
+    height: 16px;
+    font-size: 13px;
   }
 }
 
@@ -391,8 +387,8 @@ font-weight: 100;
 
   .weekdays span,
   .dates span {
-    width: 24px;
-    height: 24px;
+    width: 12px;
+    height: 12px;
     font-size: 11px;
   }
 } 
@@ -636,11 +632,11 @@ font-weight: 100;
 
 
   .place {
-    font-size: 40px;
+    font-size: 25px;
     line-height: 1.4;
   } 
   .place1 {
-font-size: 35px;
+font-size: 25px;
     line-height: 1.4;    }
   .program h2 {
     font-size: 50px; 
@@ -653,7 +649,7 @@ font-size: 35px;
   }
 
   .program h3 {
-    font-size: 16px;
+    font-size: 8px;
   }
 
   .time {
@@ -667,6 +663,8 @@ font-size: 35px;
     font-size: 13px;
   }
 } 
+ 
+
 
 .countdown-image {
   position: relative;
@@ -884,4 +882,3 @@ font-weight: 100;
 
   cursor: pointer;
 }
- 
